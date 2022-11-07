@@ -1,0 +1,38 @@
+body {
+    background-color: lavenderblush;
+    color: teal;
+
+}
+h1, 
+h2,
+h3,
+p {
+    margin: auto;
+    text-align: center;
+    padding: 25px;
+}
+
+form {
+    border: 1px solid teal;
+    width: 500px;
+    margin: auto;
+    align-items: center;
+
+}
+
+div {
+    padding-left: 100px;
+}
+
+button {
+    margin: 25px;
+    margin-top: 50px;
+}
+
+.back {
+   
+}
+
+.next {
+    margin-left: 310px;
+}
