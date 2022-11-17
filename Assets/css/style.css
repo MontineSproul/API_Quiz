@@ -12,14 +12,16 @@ p {
     padding: 25px;
 }
 
-form {
+main {
     border: 1px solid teal;
     width: 500px;
     margin: auto;
     align-items: center;
 
 }
-
+.hide {
+    display: none;
+}
 div {
     padding-left: 100px;
 }
