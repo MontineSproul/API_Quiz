@@ -10,21 +10,62 @@
 
 var questionNumber = 0;
 var questions = [
-    {question: '1. What does API mean?', answers: ['App Placement Inputs', 'Application Programming Interface', 'answer3', 'answer4' ], 
-    correctAnswer: function(){return this.answers[1]} },
+    {question: '1. What does API mean?', 
+     answers: ['App Placement Inputs', 'Application Programming Interface', 'answer3', 'answer4'], 
+     correctAnswer: function(){return this.answers[1]} 
+    },
     //call correctAnswer()
-    {question: '2. What is DOM?', answers: ['answer1', 'answer2', 'answer3', 'answer4' ], correctAnswer: function(){return this.answers[1]} },
-    {question: 'Which is NOT a data type?', answers: ['String', 'Integer', 'Boolean', 'Letters' ], correctAnswer: function(){return this.answers[1]} },
-    {question: 'What is an array?', answers: ['A sea animal', 'answer2', 'answer3', 'answer4' ], correctAnswer: function(){return this.answers[1]} },
-    {question: 'Which is an example of what you would use an if/else statement for?', answers: ['answer1', 'answer2', 'answer3', 'answer4' ], correctAnswer: function(){return this.answers[1]} },
-    {question: 'What is local storage', answers: ['answer1', 'answer2', 'answer3', 'answer4' ], correctAnswer: function(){return this.answers[1]} },
-    {question: '[] are used for _____ while {} are used for ____.', answers: ['answer1', 'answer2', 'answer3', 'answer4' ], correctAnswer: function(){return this.answers[1]} },
-    {question: 'What is one of the purposes for a for loop?', answers: ['answer1', 'answer2', 'answer3', 'answer4' ], correctAnswer: function(){return this.answers[1]} },
-    {question: 'What has key value/pairs?', answers: ['answer1', 'answer2', 'answer3', 'answer4' ], correctAnswer: function(){return this.answers[1]} },
-    {question: 'What does var mean?', answers: ['answer1', 'answer2', 'answer3', 'answer4' ], correctAnswer: function(){return this.answers[1]} }
+    {question: '2. What is DOM?', 
+    answers: ['answer1', 'answer2', 'answer3', 'answer4' ], 
+    correctAnswer: function(){return this.answers[1]} },
+    {question: 'Which is NOT a data type?', 
+    answers: ['String', 'Integer', 'Boolean', 'Letters' ], 
+    correctAnswer: function(){return this.answers[1]} },
+    {question: 'What is an array?', 
+    answers: ['A sea animal', 'answer2', 'answer3', 'answer4' ], 
+    correctAnswer: function(){return this.answers[1]} },
+    {question: 'Which is an example of what you would use an if/else statement for?', 
+    answers: ['answer1', 'answer2', 'answer3', 'answer4' ], 
+    correctAnswer: function(){return this.answers[1]} },
+    {question: 'What is local storage',
+     answers: ['answer1', 'answer2', 'answer3', 'answer4' ], 
+    correctAnswer: function(){return this.answers[1]} },
+    {question: '[] are used for _____ while {} are used for ____.',
+     answers: ['answer1', 'answer2', 'answer3', 'answer4' ], 
+    correctAnswer: function(){return this.answers[1]} },
+    {question: 'What is one of the purposes for a for loop?',
+     answers: ['answer1', 'answer2', 'answer3', 'answer4' ], 
+    correctAnswer: function(){return this.answers[1]} },
+    {question: 'What has key value/pairs?', 
+    answers: ['answer1', 'answer2', 'answer3', 'answer4' ], 
+    correctAnswer: function(){return this.answers[1]} },
+    {question: 'What does var mean?',
+     answers: ['answer1', 'answer2', 'answer3', 'answer4' ], 
+    correctAnswer: function(){return this.answers[1]} }
+]
 
-     ]
+var mainEl = $("#main");
+
 var timer = 120;
+// setInterval(function() {
+// timer.innerHTML = seconds++;
+// }, 120);
+// function setTime() {
+//     // Sets interval in variable
+//     var timerInterval = setInterval(function() {
+//       remainingTime--;
+//       timeEl.textContent = remainingTime;
+//       if(remainingTime === 0) {
+//         // Stops execution of action at set interval and shows results page when condition is met.
+//         clearInterval(timerInterval);
+function setTime() {
+    // Sets interval in variable
+    var timerInterval = setInterval(function() {
+      timer--;
+      $.text('timer')
+  
+    }, 120000);
+  }
 //var hiddenObjects = documnet.getElementById
      //will display questions and answers 
 function display() {
@@ -42,15 +83,21 @@ function display() {
    
     if($(event.target).text() === questions[questionNumber].correctAnswer()) {
         //grabs the question and the correct answer from the question we grabbed
-         console.log('Correct!')
-    } else {
-        console.log('Wrong!')
+        //innerhtml
+        $('#rightOrWrong').text("Correct!")
+        } else {
+        $('#rightOrWrong').text("Wrong!")
         //deduct time from timer 
         timer = timer - 10;
     } 
+    var myTimeout =
+    setTimeout(function(){
+        $('#rightOrWrong').text(" ")
+    }, 1000)
+
     questionNumber ++;
     //if runs out of time or if questionNumber.length then 
-    if (questionNumber >= questions.length || timer === 0) {
+    if (questionNumber >= questions.length || timer <= 0) {
         alert('Game over!');
         //add something that calculates and displays the user score 
     } else {
@@ -68,6 +115,7 @@ function display() {
 
 //elementById
     $('#strtBtn').on('click', function() {
+        setTime();
         display();
           $('#begin').addClass('hide');
           $('#questions').removeClass('hide');
