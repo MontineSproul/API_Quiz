@@ -7,7 +7,7 @@
 - You are able to save your scores in a leaderboard.
 - Using a combination of HTML, CSS JavaScript and jQuery this application is interactive and saves data to local storage.
 
-![JavsScript Quiz]()
+![JavsScript Quiz](./Assets/images/liveApp.png)
 
 
 
