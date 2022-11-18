@@ -62,7 +62,7 @@ function setTime() {
     // Sets interval in variable
     var timerInterval = setInterval(function() {
       timer--;
-      $.text(timer)
+      $('#timer').text(timer)
   
     }, 1000);
   }
@@ -77,6 +77,10 @@ function display() {
 }
 //function to go to next question 
 
+
+//when timer reaches zero end game and display score or when the quiz is finished end game and display score 
+//save your score
+//high scores
 
 
  function nextQuestion(event) {
