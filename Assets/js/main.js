@@ -62,9 +62,9 @@ function setTime() {
     // Sets interval in variable
     var timerInterval = setInterval(function() {
       timer--;
-      $.text('timer')
+      $.text(timer)
   
-    }, 120000);
+    }, 1000);
   }
 //var hiddenObjects = documnet.getElementById
      //will display questions and answers 
@@ -119,6 +119,7 @@ function display() {
         display();
           $('#begin').addClass('hide');
           $('#questions').removeClass('hide');
+          $('#time-container').removeClass('hide');
         //start timer 
 })
 
